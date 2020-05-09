@@ -1,6 +1,5 @@
 /node_modules/
 /.vscode/
-/src/
 /.git/
 /**/Thumbs.db
 /**/*.DS_Store
