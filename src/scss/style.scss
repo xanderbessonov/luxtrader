@@ -1,0 +1,291 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+    @font-face {
+        font-family: $font_name;
+        font-display: swap;
+        src: url("../fonts/#{$file_name}.woff") format("woff"),
+            url("../fonts/#{$file_name}.woff2") format("woff2");
+        font-weight: #{$weight};
+        font-style: #{$style};
+    }
+}
+@import "slick.scss";
+
+//<МИКСИНЫ>===============================================================================================
+@import "mixins.scss";
+//</МИКСИНЫ>===============================================================================================
+
+//<ШРИФТЫ>===============================================================================================
+
+//<Подключаем шрифты>=======================================================================================
+@import "fonts.scss";
+//</Подключаем шрифты>=======================================================================================
+
+//<Иконочные шрифты>==========================================================================================
+
+//</Иконочные шрифты>==========================================================================================
+
+//<Шрифт по умолчанию>==========================================================================================
+// &display=swap&subset=cyrillic-ext
+@import url("https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,700&display=swap&subset=cyrillic-ext");
+$fontfamily: "PT Sans";
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>=======================================================================================================
+
+//<ПЕРЕМЕННЫЕ>===========================================================================================================
+$minwidth: 320px;
+$mw: 970;
+$md1: $mw + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+@import "null.scss";
+body {
+    color: #000;
+    font-size: 14px;
+    &.lock {
+        overflow: hidden;
+    }
+}
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    &.loaded {
+    }
+}
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+._container {
+    max-width: $mw + px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 10px;
+}
+
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+@import "forms.scss";
+@import "ui.scss";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+//@import "../../js/fancybox/jquery.fancybox.scss";
+//@import "datepicker.scss";
+//@import "fontawesome.scss";
+//@import "popover.min.scss";
+//@import "baguetteBox.scss";
+//@import "pagging.scss";
+//@import "icons.scss";
+@import "popup.scss";
+@import "header.scss";
+@import "footer.scss";
+@import "home.scss";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+.page {
+    min-width: 0;
+    flex: 1 1 auto;
+}
+
+.main-slider {
+    position: relative;
+    // .main-slider__body
+    &__body {
+        align-items: stretch;
+    }
+    // .main-slider__item
+    &__item {
+    }
+    // .main-slider__control
+    &__control {
+        position: absolute;
+        left: 50%;
+        width: 100px;
+        height: 100px;
+        bottom: 0;
+        transform: translate(-50%, 50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:after {
+            content: "";
+            background-color: #fff;
+            position: absolute;
+            width: 70%;
+            height: 70%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+    }
+}
+
+.control-main-slider {
+    // .control-main-slider__arrow
+    &__arrow {
+        position: relative;
+        z-index: 2;
+        background: url("../img/icons/sl-arrow.png") 0 0 no-repeat;
+        width: 14px;
+        height: 24px;
+        cursor: pointer;
+        // .control-main-slider__arrow_prev
+        &_prev {
+        }
+        // .control-main-slider__arrow_next
+        &_next {
+            transform: rotate(180deg);
+        }
+    }
+    // .control-main-slider__decor
+    &__decor {
+        position: relative;
+        z-index: 2;
+        margin: 0px 10px;
+        animation: rotate 5s infinite linear;
+    }
+}
+
+@keyframes rotate {
+    0% {
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.item-main-slider {
+    text-align: center;
+    padding: 30px 0px 100px 0px;
+    position: relative;
+    // .item-main-slider__content
+    &__content {
+        position: relative;
+        z-index: 2;
+    }
+    // .item-main-slider__container
+    // &__container {
+    // }
+    // .item-main-slider__text
+    &__text {
+        max-width: 700px;
+        margin: 25px auto 0 auto;
+        color: #ffffff;
+        font-family: "PT Sans";
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 25px;
+    }
+    // .item-main-slider__bg
+    &__bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+    // .item-main-slider__btn
+    &__btn {
+        margin: 55px 0px 0px 0px;
+    }
+}
+
+// ===============================================================================================================================================
+
+.lots {
+    padding: 85px 0px 63px 0px;
+    // .lots__container
+    &__container {
+    }
+    // .lots__header
+    &__header {
+        margin: 0px 0px 40px 0px;
+    }
+    // .lots__slider
+    &__slider {
+    }
+}
+
+.slider-lots {
+    // .slider-lots__body
+    &__body {
+        margin: 0px -50px 50px;
+        @media (max-width: 975px){
+        margin: 0px -15px 50px;
+        }
+    }
+    // .slider-lots__slide
+    &__slide {
+        min-width: 0;
+        padding: 0px 50px;
+        @media (max-width: 975px){
+            padding: 0px 15px;
+            }
+    }
+    // .slider-lots__control
+    &__control {
+    }
+}
+.control-slider-lots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // .control-slider-lots__arrow
+    &__arrow {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        span {
+            background: url('../img/icons/left_arr.svg') left no-repeat;
+            width: 108px;
+            height: 35px;
+            flex: 0 0 108px;
+            @media (max-width: 450px){
+            flex: 0 0 50px;
+            }
+        }
+        
+        &:after{
+            content:'';
+            margin: 0px 5px;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            border: 1px solid #bb9c66;
+        }
+        &:last-child{
+            flex-direction: row-reverse;
+            span {
+                transform: rotate(180deg);
+            }
+        }
+    }
+    // .control-slider-lots__link
+    &__link {
+        background: url("../img/icons/circle.png") 0 0 no-repeat;
+        flex: 0 0 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 21px;
+        color: #000;
+        font-family: "PFDin";
+        font-weight: 500;
+        text-transform: uppercase;
+        margin: 0px 20px;
+    }
+}
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================
