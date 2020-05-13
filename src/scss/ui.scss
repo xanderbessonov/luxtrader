@@ -251,7 +251,7 @@
     border-radius: 50%;
     overflow: hidden;
     width: 250px;
-    @media (min-width: 992px){
+    @media (min-width: 992px) {
         &:hover {
             .item__bg {
                 transform: scale(1.1);
@@ -282,10 +282,10 @@
         color: #fff;
         font-size: 21px;
         font-weight: 500;
-        line-height: calc(25 /21);
+        line-height: calc(25 / 21);
         letter-spacing: 2.1px;
         text-transform: uppercase;
-        font-family: 'PFDin';
+        font-family: "PFDin";
         flex: 1 1 auto;
     }
     // .item__deco
@@ -310,6 +310,70 @@
             top: 0;
             left: 0;
             background-color: rgba(0, 0, 0, 0.65);
+        }
+    }
+}
+
+// ==================================================================================================================================
+
+.service {
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    // .service__image
+    &__image {
+        height: 205px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 0px 10px 0px;
+    }
+    // .service__title
+    &__title {
+        // flex: 1 1 auto;
+        color: #ffffff;
+        font-family: "PFDin";
+        font-size: 21px;
+        font-weight: 500;
+        line-height: calc(25 / 21);
+        text-transform: uppercase;
+        letter-spacing: 1.1px;
+    }
+    // .service__text
+    &__text {
+        color: #bb9c66;
+        font-size: 15px;
+        // max-height: 50px;
+        // overflow: hidden;
+        line-height: calc(25 /15);
+        margin: 25px 0px 0px 0px;
+    }
+    // .service__btn
+    &__btn {
+        position: relative;
+        font-family: "PFDin";
+        font-size: 21px;
+        font-weight: 500;
+        letter-spacing: 2.1px;
+        color: #ffffff;
+        text-align: center;
+        text-transform: uppercase;
+        margin: 30px 0px 0px 0px;
+        &:before{
+            content:'';
+            position: absolute;
+            background-color: #bb9c66;
+            height: 1px;
+            width: 100%;
+            top: 50%;
+            left: 0;
+        }
+        span {
+            background-color: #1c242a;
+            position: relative;
+            z-index: 2;
+            padding: 0px 15px;
         }
     }
 }

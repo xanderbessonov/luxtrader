@@ -118,9 +118,9 @@ $(document).on('click touchstart', function (e) {
 
 $(document).ready(function () {
   $('.main-slider__body').slick({
-	// infinite: true,
-  //   slidesToShow: 2,
-  //   slidesToScroll: 1,
+    // infinite: true,
+    //   slidesToShow: 2,
+    //   slidesToScroll: 1,
     prevArrow: $('.control-main-slider__arrow_prev'),
     nextArrow: $('.control-main-slider__arrow_next')
   });
@@ -150,6 +150,19 @@ $(document).ready(function () {
     nextArrow: $('.control-slider-lots__arrow_next')
   });
 });
+
+$(document).ready(function () {
+  $('.slider-quotes__body').slick({
+    // infinite: true,
+    //   slidesToShow: 1,
+    //   slidesToScroll: 1,
+    fade: true,
+    cssEase: 'linear',
+    nextArrow: $('.control-slider-quotes__circle'),
+    prevArrow: false
+  });
+});
+
 
 // $(document).ready(function () {
 //   $('.slider-test').slick({
